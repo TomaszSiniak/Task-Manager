@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="my personal template to build websites and web app" />
+    <title>Document</title>
+    <!--build:css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!--endbuild -->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- Place favicon.ico in the root directory -->
+
+
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+
+    <script src="https://use.fontawesome.com/70005595e0.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask">
+            <header class="page-header" id="page-header">
+                <div class="socials">
+                    <div class="socials__item socials__item-facebook"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></div>
+                    <div class="socials__item socials__item-twitter"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></div>
+                    <div class="socials__item socials__item-instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></div>
+                    <div class="socials__item socials__item-pinterest"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i></div>
+                </div>
+                <div class="burger-container">
+                    <div class="burger">
+                        <span class="burger__item">&nbsp;</span>
+                        <span class="burger__item">&nbsp;</span>
+                        <span class="burger__item">&nbsp;</span>
+                    </div>
+                </div>
+            </header>
+            <main class="content">
+                <nav class="sidebar">
+                    <ul class="submenu">
+                        <li class="submenu__item home"><a href="#page-header" id="homeSub"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
+                        <li class="submenu__item addTask"><a href="#page-header" id="addSub"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="container">
+                    <div class="title">Weekly Task Manager</div>
+                    <form class="new-task-container">
+                        <div class="new-task-container__title">Enter new task</div>
+                        <label for=""><input type="text" class="new-task-container__input" placeholder="new task"></label>
+                        <div class="select-container">
+                            <select class="select-box" id="select-box">
+                                <option value="monday" class="select-box__item">Monday</option>
+                                <option value="tuesday" class="select-box__item">Tuesday</option>
+                                <option value="wednesday" class="select-box__item">Wednesday</option>
+                                <option value="thursday" class="select-box__item">Thursday</option>
+                                <option value="friday" class="select-box__item">Friday</option>
+                                <option value="saturday" class="select-box__item">Saturday</option>
+                                <option value="sunday" class="select-box__item">Sunday</option>
+                            </select>
+                        </div>
+                        <button class="new-task-container__button">Add Task</button>
+                    </form>
+                    <div class="tasks-container">
+                        <div class="weekday">
+                            <div class="weekday__name">Monday</div>
+                            <ul class="weekday-tasks monday" id="monday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Tuesday</div>
+                            <ul class="weekday-tasks" id="tuesday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Wednesday</div>
+                            <ul class="weekday-tasks" id="wednesday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Thursday</div>
+                            <ul class="weekday-tasks" id="thursday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Friday</div>
+                            <ul class="weekday-tasks" id="friday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Saturday</div>
+                            <ul class="weekday-tasks" id="saturday"></ul>
+                        </div>
+                        <div class="weekday">
+                            <div class="weekday__name">Sunday</div>
+                            <ul class="weekday-tasks" id="sunday"></ul>
+                        </div>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul class="menu">
+                        <li class="menu__item home"><a href="#" id="home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home</a></li>
+                        <li class="menu__item organiser"><a href="#" id="add"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i>Organiser</a>
+                        </li>
+                        <li class="menu__item about"><a href="#"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>About</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </main>
+            <footer class="footer">
+                <p>Created and designed with <i class="fa fa-heart" aria-hidden="true"></i> by SinTom 2017</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+    <!-- build:js -->
+    <script src="js/main.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+
+    <!-- endbuild -->
+
+
+</body>
+
+</html>
