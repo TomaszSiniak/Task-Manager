@@ -48,13 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectBox = document.querySelector('#select-box');
         const selectDay = selectBox.options[selectBox.selectedIndex].value;
 
-        const monday = document.querySelector('#monday');
-        const tuesday = document.querySelector('#tuesday');
-        const wednesday = document.querySelector('#wednesday');
-        const thursday = document.querySelector('#thursday');
-        const friday = document.querySelector('#friday');
-        const saturday = document.querySelector('#saturday');
-        const sunday = document.querySelector('#sunday');
+
 
         //creating new li element,add class
 
@@ -116,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             '<figure class = "icons-box__icon icons-box__icon-delete"> <i class = "fa fa-minus-circle fa-2x" aria-hidden = "true"></i></figure > ' +
             '</div>'
     };
+    
 
     //add ready task to main list
     function bindNewTask() {
@@ -179,26 +174,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (allTasks !== null) {
             for (i = 0; i < allTasks.length; i++) {
+
+                //variables
                 const title = allTasks[i].title;
                 const day = allTasks[i].chosenDay;
 
-                //variables
-                const newLi = document.createElement('li');
-
-
-                const monday = document.querySelector('#monday');
-                const tuesday = document.querySelector('#tuesday');
-                const wednesday = document.querySelector('#wednesday');
-                const thursday = document.querySelector('#thursday');
-                const friday = document.querySelector('#friday');
-                const saturday = document.querySelector('#saturday');
-                const sunday = document.querySelector('#sunday');
-
                 //creating new li element,add class
-
+                const newLi = document.createElement('li');
                 newLi.classList.add('weekday-tasks__item');
                 // add task look
                 newLi.innerHTML = prepareTask(title);
+
+
+                // assign to proper day contianer
                 if (day === "monday") {
                     monday.appendChild(newLi);
                 } else if (day === "tuesday") {
@@ -214,6 +202,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (day === "sunday") {
                     sunday.appendChild(newLi);
                 }
+
+
                 // remove task from the list
                 const deleteBtn = newLi.querySelector('.icons-box__icon-delete');
 
