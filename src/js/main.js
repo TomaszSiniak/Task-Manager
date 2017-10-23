@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             '<figure class = "icons-box__icon icons-box__icon-delete"> <i class = "fa fa-minus-circle fa-2x" aria-hidden = "true"></i></figure > ' +
             '</div>'
     };
-    
+
 
     //add ready task to main list
     function bindNewTask() {
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const allTasks = JSON.parse(localStorage.getItem('allTasks'));
 
         if (allTasks !== null) {
-            for (i = 0; i < allTasks.length; i++) {
+            for (let i = 0; i < allTasks.length; i++) {
 
                 //variables
                 const title = allTasks[i].title;
