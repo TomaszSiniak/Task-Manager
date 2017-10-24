@@ -17,15 +17,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // scrollTo - smooth scrolling plugin
 
-    $(function($) {
+    $(($) => {
+
+        //main nav
         $.scrollTo(0);
-        $('#homeSub').click(function() {
+        $('#home').click(() => {
+            $.scrollTo($('#page-header'), 500);
+            menuToggle.classList.remove('show-menu');
+            burger.classList.remove('open');
+        });
+        $('#add').click(() => {
+            $.scrollTo($('.new-task-container'), 500);
+            menuToggle.classList.remove('show-menu');
+            burger.classList.remove('open');
+        });
+
+        // sidemenu
+        $('#homeSub').click(() => {
             $.scrollTo($('#page-header'), 500);
         });
-        $('#addSub').click(function() {
+        $('#addSub').click(() => {
             $.scrollTo($('.new-task-container'), 500);
         });
     });
+
 
 
 
@@ -37,17 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
     // --------------------------   ADD NEW TASK ---------------------------------------
 
     function addNewTask(title) {
 
         //variables
         const newLi = document.createElement('li');
-
         const selectBox = document.querySelector('#select-box');
         const selectDay = selectBox.options[selectBox.selectedIndex].value;
-
 
 
         //creating new li element,add class
@@ -121,9 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = document.querySelector('input').value;
 
             if (title) {
+                //call function add task and save to localStorage if we input title
                 addNewTask(title);
                 saveTasks();
             }
+
+            //reset input after added
             newTaskForm.reset();
         })
 
@@ -143,9 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const task = {
             title: title,
             chosenDay: day
-
         }
-
 
         if (localStorage.getItem('allTasks') === null) {
             //if doesnt exist - init array
@@ -162,7 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // and re-set back to local storage
             localStorage.setItem('allTasks', JSON.stringify(allTasks));
         }
-
 
     }
 

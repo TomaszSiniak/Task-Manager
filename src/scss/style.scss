@@ -20,7 +20,6 @@
  
  //   -------------- HEADER  STYLE -------------
  .page-header {
-     position: absolute;
      @include flexDefault;
      height: 3rem;
      justify-content: space-between;
@@ -52,6 +51,9 @@
          }
      }
      .burger-container {
+         position: fixed;
+         top: .5rem;
+         right: .5rem;
          height: 2rem;
          width: 2rem;
          margin-right: 0.5rem;
@@ -87,46 +89,6 @@
          transform: rotate(-45deg);
          background-color: #c5c0c1
      }
- }
- 
- // -------------- MAIN CONTENT ----------------
- .content {
-     @include flexDefault;
-     position: relative;
-     .sidebar {
-         justify-content: flex-start;
-         background-color: rgb(26, 41, 48);
-         padding: 0.3rem;
-         position: absolute;
-         top: 0;
-         left: 0;
-         height: 100%;
-         padding-top: 2rem;
-         z-index: 2;
-         width: 2rem;
-         .submenu {
-             @include flexDefault;
-             flex-direction: column;
-             position: fixed;
-             width: 2rem;
-             &__item {
-                 margin: 2rem auto;
-                 a {
-                     text-decoration: none;
-                     color: #c5c0c1;
-                     transition: all .3s ease-in;
-                     &:hover {
-                         color: #f7ce3b;
-                         transition: all 300ms ease-in;
-                     }
-                 }
-             }
-         }
-         @media only screen and(min-width:1000px) {
-             display: block;
-             transition: all .3s ease-in;
-         }
-     }
      .main-nav {
          position: absolute;
          top: 0;
@@ -139,6 +101,7 @@
          max-width: 15rem;
          transition: all 400ms ease-in;
          .menu {
+             position: fixed;
              @include flexDefault;
              flex-direction: column;
              margin-top: 2rem;
@@ -165,6 +128,58 @@
      }
      .show-menu {
          margin-right: 0;
+     }
+ }
+ 
+ // -------------- MAIN CONTENT ----------------
+ .content {
+     @include flexDefault;
+     position: relative;
+     .sidebar {
+         justify-content: flex-start;
+         background-color: rgb(26, 41, 48);
+         padding: 0.3rem;
+         position: absolute;
+         top: 0;
+         left: 0;
+         margin: -3rem 0;
+         height: 110%;
+         padding-top: 3rem;
+         z-index: 2;
+         width: 2rem;
+         .submenu {
+             @include flexDefault;
+             flex-direction: column;
+             position: fixed;
+             width: 2rem;
+             &__item {
+                 margin: 2rem auto;
+                 flex-direction: column;
+                 display: flex;
+                 a {
+                     text-decoration: none;
+                     color: #c5c0c1;
+                     transition: all .3s ease-in;
+                     font-size: 0.8rem;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     flex-direction: column;
+                     &:hover {
+                         color: #f7ce3b;
+                         transition: all 300ms ease-in;
+                     }
+                     .fa {
+                         margin-bottom: .3rem;
+                         font-size: 2rem;
+                     }
+                 }
+             }
+         }
+         @media only screen and(min-width:1000px) {
+             display: block;
+             transition: all .3s ease-in;
+         }
      }
  }
  
