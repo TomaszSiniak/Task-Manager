@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (title) {
                 addNewTask(title);
+                saveTasks();
             }
-            saveTasks();
             newTaskForm.reset();
         })
 
@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             chosenDay: day
 
         }
+
 
         if (localStorage.getItem('allTasks') === null) {
             //if doesnt exist - init array
